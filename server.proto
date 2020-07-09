@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package server;
+
+message SlowThingRequest {}
+
+message SlowThingResponse {}
+
+service SlowService {
+  rpc DoSlowThing(SlowThingRequest) returns (SlowThingResponse);
+}

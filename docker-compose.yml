@@ -1,0 +1,17 @@
+version: "3"
+services:
+  client:
+    build: ./cmd/client
+    networks:
+      - harness
+  server:
+    build: ./cmd/server
+    networks:
+      - harness
+
+networks:
+  harness:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.0.0/16
